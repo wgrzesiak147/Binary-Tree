@@ -12,22 +12,23 @@
 
 using namespace std;
 
+template <typename T>
 
 class Node 
 {
 	public:
-	int data;
+	T data;
 	Node* right;
 	Node* left;
 
 
 
 
-	Node(int dat,Node* lef=NULL,Node* righ=NULL):data(dat),right(righ),left(lef)
+	Node(T dat,Node* lef=NULL,Node* righ=NULL):data(dat),right(righ),left(lef)
 	{
 
 	};
-	void push(int a)
+	void push(T a)
 	{
 		if(a<data)
 		{
@@ -45,7 +46,7 @@ class Node
 
 };
 
-int Height(Node& root)
+int Height(Node<int>& root)
 {
 	int left=0;
 	int right=0;
@@ -62,7 +63,7 @@ int Height(Node& root)
 }
 
 
-int Sum(Node** root)
+int Sum(Node<int>** root)
 {
 	int sum=0;
 	if((*root)->left!=0)
@@ -77,7 +78,7 @@ int Sum(Node** root)
 }
 
 
-void Show(Node& root , int i=35)
+void Show(Node<int>& root , int i=35)
 
 {	
 	
@@ -105,7 +106,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	int a;
 	cout<<"Root value : ";
 	cin>>a;
-	Node *root = new Node(a);
+	Node<int> *root = new Node<int>(a);
 	
 	while(true)
 	{
